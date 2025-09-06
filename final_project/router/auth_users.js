@@ -15,7 +15,8 @@ const authenticatedUser = (username,password)=>{ //returns boolean
   return users.some(user => user.username === username && user.password === password);
 }
 
-//only registered users can login
+// Task 7
+// only registered users can login
 regd_users.post("/login", (req,res) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -53,6 +54,7 @@ regd_users.post("/login", (req,res) => {
   return res.status(200).json({message: "User logged in successfully"});
 });
 
+// Task 8
 // Add a book review
 regd_users.put("/auth/review/:isbn", (req, res) => {
   // Get isbn and review from request
@@ -78,6 +80,7 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
   return res.status(200).json({message: "Review added/modified successfully"})
 });
 
+// Task 9
 regd_users.delete("/auth/review/:isbn", (req, res) => {
   // Get isbn
   const isbn = req.params.isbn;
